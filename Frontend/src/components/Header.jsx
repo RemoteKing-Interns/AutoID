@@ -38,7 +38,17 @@ export default function Header() {
           <a href="/about" className="hover:text-indigo-600">
             About
           </a>
-          <a href="/contact" className="hover:text-indigo-600">
+          <a 
+            href="#contact" 
+            className="hover:text-indigo-600"
+            onClick={(e) => {
+              e.preventDefault();
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
             Contact
           </a>
         </nav>
@@ -77,7 +87,18 @@ export default function Header() {
           <a href="/about" className="block text-gray-700">
             About
           </a>
-          <a href="/contact" className="block text-gray-700">
+          <a 
+            href="#contact" 
+            className="block text-gray-700"
+            onClick={(e) => {
+              e.preventDefault();
+              setMenuOpen(false);
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
             Contact
           </a>
           <a href="/login" className="block text-gray-700">
